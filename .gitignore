@@ -25,6 +25,9 @@
 *.exe
 *.out
 
+# temp dir
+files/
+
 # cmake
 build
 
