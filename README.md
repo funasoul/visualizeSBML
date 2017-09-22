@@ -19,6 +19,6 @@ cd ..
 rsync -auvz visualizeSBML $your_web_server:public_html/
 ```
 
-3. Access your web server (ex. `https://$your_web_server/$your_id/visualizeSBML/`)
+3. Access your web server (ex. `https://$your_web_server/~$your_id/visualizeSBML/`)
 
 Have fun!
