@@ -16,12 +16,15 @@ python sbml2json.py MAPK.xml
 ```
 will generate `model.json`.
 
-2. Upload this repository to your web server.
+2. Launch HTTP server on your machine
 ```sh
-cd ..
-rsync -auvz visualizeSBML $your_web_server:public_html/
+python -m CGIHTTPServer       # for Python2
+python -m http.server --cgi   # for Python3
 ```
 
-3. Access your web server (ex. `https://$your_web_server/~$your_id/visualizeSBML/`)
+3. Access your web server (`http://localhost:8000`)
+```sh
+open http://localhost:8000
+```
 
 Have fun!
