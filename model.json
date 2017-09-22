@@ -1,0 +1,363 @@
+[
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MKK", 
+      "name": "MKK"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MKKK", 
+      "name": "MKKK"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MAPK", 
+      "name": "MAPK"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MKKK_P", 
+      "name": "MKKK_P"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MKK_P", 
+      "name": "MKK_P"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MKK_PP", 
+      "name": "MKK_PP"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MAPK_P", 
+      "name": "MAPK_P"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "data": {
+      "id": "MAPK_PP", 
+      "name": "MAPK_PP"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J0", 
+      "name": "J0"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKKK", 
+      "id": "MKKK_J0", 
+      "target": "J0"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J0", 
+      "id": "J0_MKKK_P", 
+      "target": "MKKK_P"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "activation", 
+    "data": {
+      "source": "MAPK_PP", 
+      "id": "MAPK_PP_J0", 
+      "target": "J0"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J1", 
+      "name": "J1"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKKK_P", 
+      "id": "MKKK_P_J1", 
+      "target": "J1"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J1", 
+      "id": "J1_MKKK", 
+      "target": "MKKK"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J2", 
+      "name": "J2"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKK", 
+      "id": "MKK_J2", 
+      "target": "J2"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J2", 
+      "id": "J2_MKK_P", 
+      "target": "MKK_P"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "activation", 
+    "data": {
+      "source": "MKKK_P", 
+      "id": "MKKK_P_J2", 
+      "target": "J2"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J3", 
+      "name": "J3"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKK_P", 
+      "id": "MKK_P_J3", 
+      "target": "J3"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J3", 
+      "id": "J3_MKK_PP", 
+      "target": "MKK_PP"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "activation", 
+    "data": {
+      "source": "MKKK_P", 
+      "id": "MKKK_P_J3", 
+      "target": "J3"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J4", 
+      "name": "J4"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKK_PP", 
+      "id": "MKK_PP_J4", 
+      "target": "J4"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J4", 
+      "id": "J4_MKK_P", 
+      "target": "MKK_P"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J5", 
+      "name": "J5"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MKK_P", 
+      "id": "MKK_P_J5", 
+      "target": "J5"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J5", 
+      "id": "J5_MKK", 
+      "target": "MKK"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J6", 
+      "name": "J6"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MAPK", 
+      "id": "MAPK_J6", 
+      "target": "J6"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J6", 
+      "id": "J6_MAPK_P", 
+      "target": "MAPK_P"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "activation", 
+    "data": {
+      "source": "MKK_PP", 
+      "id": "MKK_PP_J6", 
+      "target": "J6"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J7", 
+      "name": "J7"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MAPK_P", 
+      "id": "MAPK_P_J7", 
+      "target": "J7"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J7", 
+      "id": "J7_MAPK_PP", 
+      "target": "MAPK_PP"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "activation", 
+    "data": {
+      "source": "MKK_PP", 
+      "id": "MKK_PP_J7", 
+      "target": "J7"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J8", 
+      "name": "J8"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MAPK_PP", 
+      "id": "MAPK_PP_J8", 
+      "target": "J8"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J8", 
+      "id": "J8_MAPK_P", 
+      "target": "MAPK_P"
+    }
+  }, 
+  {
+    "group": "nodes", 
+    "classes": "rxn", 
+    "data": {
+      "id": "J9", 
+      "name": "J9"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "reactant", 
+    "data": {
+      "source": "MAPK_P", 
+      "id": "MAPK_P_J9", 
+      "target": "J9"
+    }
+  }, 
+  {
+    "group": "edges", 
+    "classes": "product", 
+    "data": {
+      "source": "J9", 
+      "id": "J9_MAPK", 
+      "target": "MAPK"
+    }
+  }
+]
