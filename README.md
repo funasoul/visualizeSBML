@@ -17,18 +17,14 @@ cd visualizeSBML
 ```
 
 ## How to use
-1. Convert SBML to JSON
-```sh
-python sbml2json.py MAPK.xml
-```
-will generate `model.json`.
-
-2. Launch HTTP server on your machine
+1. Launch HTTP server on your machine
 ```sh
 python -m CGIHTTPServer       # for Python2
 python -m http.server --cgi   # for Python3
 ```
 
-3. Access your [web server](http://localhost:8000)
+2. Access your [web server](http://localhost:8000)
+
+3. Press [Upload File] and select your SBML file
 
 Have fun!
