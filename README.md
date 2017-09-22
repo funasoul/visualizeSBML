@@ -1,6 +1,9 @@
 # visualizeSBML
 visualize SBML model with cytoscape.js
 
+## Screenshot
+![screenshot](https://raw.githubusercontent.com/funasoul/visualizeSBML/images/visualizeSBML.png)
+
 ## Requirements
 - [libSBML](http://sbml.org/Software/libSBML) with python binding.
 
