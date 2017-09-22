@@ -1,16 +1,47 @@
 <!DOCTYPE>
 <html>
-	<head>
-		<title>CellDesigner-like viewer</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-		<link href="style.css" rel="stylesheet" />
-		<script src="cytoscape.min.js"></script>
-	</head>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 
-	<body>
-		<h1>CellDesigner-like viewer</h1>
-		<div id="cy"></div>
-		<!-- Load appplication code at the end to ensure DOM is loaded -->
-		<script src="code.js"></script>
-	</body>
+    <title>CellDesigner-like viewer</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/4.10.3/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/4.10.3/bootstrap-slider.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script src="cytoscape.min.js"></script>
+    <script src="reload.js"></script>
+  </head>
+
+  <body>
+    <div id="cy"></div>
+
+    <div id="config" class="config">
+      <div class="preamble">
+        <span class="label label-info">CellDesigner-like viewer</span>
+        <p>Visualize SBML model with cytoscape.js</p>
+        <p>
+        Supported files: <a href="http://sbml.org">SBML</a><br/>
+        Visualisation by <a href="http://js.cytoscape.org">Cytoscape.js</a><br/>
+        Based on the Stylesheets from <a href="http://js.cytoscape.org/demos/colajs-graph/">Cola.js/Cytoscape.js demo</a><br/>
+        </p>
+      </div>
+      <div class="param">
+        <button class="btn btn-default">Upload File</button>
+        <script src="code.js"></script>
+        <button class="btn btn-default" onclick="reloadCanvas();">Reload</button>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,87 +1,116 @@
-fetch('model.json', {mode: 'no-cors'})
-  .then(function(res) {
-    return res.json()
-  })
-  .then(function(data) {
-    var cy = window.cy = cytoscape({
-      container: document.getElementById('cy'),
+(function () {
+  'use strict';
 
-      boxSelectionEnabled: false,
-      autounselectify: true,
+  var onClickButton = function () {
+    var html =
+      '<form id="uploadForm" class="upload-form" style="display: none;">' +
+      '<input id="SBMLFile" name="sbml_file" type="file" accept=".xml,.sbml">' +
+      '</form>';
+    $('body').append(html);
+    $('#SBMLFile').on('change', uploadFile).click();
+  };
 
-      layout: {
-        name: 'cose',
-        directed: true,
-        padding: 10,
-        animate: true
-      },
+  var uploadFile = function () {
+    var formData = new FormData($('#uploadForm')[0]);
+    formData.append('other_data', 999);
+    $.ajax({
+      url: 'cgi-bin/upload.py',
+      type: 'post',
+      data: formData,
+      processData: false,
+      contentType: false,
+      timeout: 10000
+    }).done(function (json_str) {
+      console.log('done');
+			var data = JSON.parse(json_str);
+			var cy = window.cy = cytoscape({
+				container: document.getElementById('cy'),
 
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'shape': 'roundrectangle',
-            'background-color': '#d5fcd7',
-            'border-color': 'black',
-            'border-width': 1,
-            'width': 80,
-            'height': 40,
-            'text-valign': 'center',
-            'font-size': 12,
-            'label': 'data(name)'
-          }
-        },
+				boxSelectionEnabled: false,
+				autounselectify: true,
 
-        {
-          selector: 'node.rxn',
-          style: {
-            'shape': 'rectangle',
-            'background-color': 'white',
-            'width': 10,
-            'height': 10,
-            'label': ''
-          }
-        },
+				elements: data,
+				layout: {
+					name: 'cose',
+					directed: true,
+					padding: 10,
+					animate: true
+				},
 
-        {
-          selector: 'edge',
-          style: {
-            'curve-style': 'bezier',
-            'width': 1,
-            'target-arrow-shape': 'triangle',
-            'arrow-scale': 1.3,
-            'line-color': 'black',
-            'target-arrow-color': 'black'
-          }
-        },
+				style: [
+					{
+						selector: 'node',
+						style: {
+							'shape': 'roundrectangle',
+							'background-color': '#d5fcd7',
+							'border-color': 'black',
+							'border-width': 1,
+							'width': 80,
+							'height': 40,
+							'text-valign': 'center',
+							'font-size': 12,
+							'label': 'data(name)'
+						}
+					},
 
-        {
-          selector: 'edge.activation',
-          style: {
-            'target-arrow-shape': 'circle',
-            'arrow-scale': 0.8,
-            'target-arrow-fill': 'hollow',
-            'line-style': 'dotted'
-          }
-        },
+					{
+						selector: 'node.rxn',
+						style: {
+							'shape': 'rectangle',
+							'background-color': 'white',
+							'width': 10,
+							'height': 10,
+							'label': ''
+						}
+					},
 
-        {
-          selector: 'edge.inhibition',
-          style: {
-            'target-arrow-shape': 'tee',
-            'arrow-scale': 0.8,
-            'line-style': 'dashed'
-          }
-        },
+					{
+						selector: 'edge',
+						style: {
+							'curve-style': 'bezier',
+							'width': 1,
+							'target-arrow-shape': 'triangle',
+							'arrow-scale': 1.3,
+							'line-color': 'black',
+							'target-arrow-color': 'black'
+						}
+					},
 
-        {
-          selector: 'edge.reactant',
-          style: {
-            'target-arrow-shape': 'none',
-          }
-        }
-      ],
+					{
+						selector: 'edge.activation',
+						style: {
+							'target-arrow-shape': 'circle',
+							'arrow-scale': 0.8,
+							'target-arrow-fill': 'hollow',
+							'line-style': 'dotted'
+						}
+					},
 
-      elements: data
-    });
-  });
+					{
+						selector: 'edge.inhibition',
+						style: {
+							'target-arrow-shape': 'tee',
+							'arrow-scale': 0.8,
+							'line-style': 'dashed'
+						}
+					},
+
+					{
+						selector: 'edge.reactant',
+						style: {
+							'target-arrow-shape': 'none',
+						}
+					}
+				],
+
+			});
+		}).fail(function () {
+			console.log('fail');
+		}).then(function () {
+			$('#uploadForm').remove();
+		});
+
+	};
+
+	$('button').on('click', onClickButton);
+})();
