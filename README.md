@@ -9,6 +9,13 @@ visualize SBML model with cytoscape.js
 
 [FunalabPorts](https://github.com/funasoul/FunalabPorts) might be your help :-)
 
+## Download
+Just clone from this repository.
+```sh
+git clone https://github.com/funasoul/visualizeSBML.git
+cd visualizeSBML
+```
+
 ## How to use
 1. Convert SBML to JSON
 ```sh
