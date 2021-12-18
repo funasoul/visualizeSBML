@@ -1,27 +1,27 @@
 (function () {
-  'use strict';
+	'use strict';
 
-  var onClickButton = function () {
-    var html =
-      '<form id="uploadForm" class="upload-form" style="display: none;">' +
-      '<input id="SBMLFile" name="sbml_file" type="file" accept=".xml,.sbml">' +
-      '</form>';
-    $('body').append(html);
-    $('#SBMLFile').on('change', uploadFile).click();
-  };
+	var onClickButton = function () {
+		var html =
+			'<form id="uploadForm" class="upload-form" style="display: none;">' +
+			'<input id="SBMLFile" name="sbml_file" type="file" accept=".xml,.sbml">' +
+			'</form>';
+		$('body').append(html);
+		$('#SBMLFile').on('change', uploadFile).click();
+	};
 
-  var uploadFile = function () {
-    var formData = new FormData($('#uploadForm')[0]);
-    formData.append('other_data', 999);
-    $.ajax({
-      url: 'cgi-bin/upload.py',
-      type: 'post',
-      data: formData,
-      processData: false,
-      contentType: false,
-      timeout: 10000
-    }).done(function (json_str) {
-      console.log('done');
+	var uploadFile = function () {
+		var formData = new FormData($('#uploadForm')[0]);
+		formData.append('other_data', 999);
+		$.ajax({
+			url: 'cgi-bin/upload.py',
+			type: 'post',
+			data: formData,
+			processData: false,
+			contentType: false,
+			timeout: 10000
+		}).done(function (json_str) {
+			console.log('done');
 			var data = JSON.parse(json_str);
 			var cy = window.cy = cytoscape({
 				container: document.getElementById('cy'),
